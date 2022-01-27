@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+ <title> not hesaplama </title>
+
+<style>
+  .uzunMetin{
+    text-align:center;
+    font-size: 25px;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+  body{
+    background-color: rgb(226, 244, 250);
+  }
+</style>
+</head>
+
+<body>
+   <br/>
+  <div style="font-size: 30px; text-align: center; font-family:Arial, Helvetica, sans-serif;">Not Hesaplama :</div>
+  <br/>
+
+
+  <p class="uzunMetin"> Öğrenciler bu not hesaplama programı ile bir dersten aldıkları son notu hesaplayabilirler.
+     Böylece, ortalamayı(çan-curve) da hesaplayarak, kendi notu ile ortalamanın notu arasında bir kıyas yapabilir.
+ </p>
+ <form class="diger"></form>
+<label for="vize">Vize </label>
+     <div>
+        <input type="number"  placeholder="Not" id="vize">
+        <input type="number"  placeholder="%"  id="vizeYuzde" >
+        
+      </div>
+
+<form class="diger"></form>
+<label for="arasinav1">Ara sınav 1</label>
+<div>
+  <input type="number" placeholder="Not" id="arasinav1">
+  <input type="number"  placeholder="%"  id="araYuzde1" >
+  
+</div>
+<form class="diger"></form>
+    <label for="arasinav2">Ara sınav 2</label>
+<div>
+  <input type="number" placeholder="Not" id="arasinav2">
+  <input type="number"  placeholder="%"  id="araYuzde2" >
+  
+</div>
+<form class="diger"></form>
+<label for="odev">Ödev</label>
+
+<div>
+  <input type="number" placeholder="Not" id="odev">
+  <input type="number"   placeholder="%"  id="odevYuzde" >
+</div>
+
+<form class="diger"></form>
+<label for="final">Final </label>
+
+<div>
+  <input type="number" placeholder="Not" id="final">
+  <input type="number"   placeholder="%" id="finalYuzde">
+  
+  <button type="button" id="btnTopla">Hesapla</button>
+</div>
+
+<div id="denem"></div>
+<script type="text/javascript">
+	btn = document.getElementById("btnTopla");
+    btn.onclick=function(){
+    
+     var vize=Number(document.getElementById("vize").value);
+     var vizeYuzde=Number(document.getElementById("vizeYuzde").value);
+
+     var arasinav1=Number(document.getElementById("arasinav1").value);
+     var araYuzde1=Number(document.getElementById("araYuzde1").value);
+     
+     var arasinav2=Number(document.getElementById("arasinav2").value);
+     var araYuzde2=Number(document.getElementById("araYuzde2").value);
+     
+     var odev=Number(document.getElementById("odev").value);
+     var odevYuzde=Number(document.getElementById("odevYuzde").value);
+     
+     var final=Number(document.getElementById("final").value);
+     var finalYuzde=Number(document.getElementById("finalYuzde").value);
+     
+   // var ort  = (s1+s2+s3+s4+s5)/5;
+     var ort=vize*vizeYuzde/100+arasinav1*araYuzde1/100+arasinav2*araYuzde2/100+odev*odevYuzde/100+final*finalYuzde/100; 
+     
+     document.getElementById("denem").innerHTML="Girilen Sayıların Ortalaması : "+ort
+    }
+
+</script>
+</body>
+</html>
